@@ -14,7 +14,10 @@ const MainNavigation = createStackNavigator(
       }
     }
   },
-  {}
+  {
+    headerMode: "screen",
+    headerBackTitleVisible: false
+  }
 );
 
 export default createAppContainer(MainNavigation);
