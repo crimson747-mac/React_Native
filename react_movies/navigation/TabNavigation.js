@@ -7,12 +7,13 @@ import TVScreen from "../screens/TV";
 import SearchScreen from "../screens/Search";
 import { BG_COLOR } from "../constants/Colors";
 import TabBarIcon from "../components/TabBarIcon";
+import { createStack } from "./config";
 
 const TabNavigation = createBottomTabNavigator(
   {
     //첫 번째 인자는 탭에 대한 각각의 설정을 해줄수 있다.
     Movie: {
-      screen: MoviesScreen,
+      screen: createStack(MoviesScreen, "Movies"),
       navigationOptions: {
         tabBarIcon: ({ focused }) => (
           <TabBarIcon
@@ -23,7 +24,7 @@ const TabNavigation = createBottomTabNavigator(
       }
     },
     TV: {
-      screen: TVScreen,
+      screen: createStack(TVScreen, "TV"),
       navigationOptions: {
         tabBarIcon: ({ focused }) => (
           <TabBarIcon
@@ -34,7 +35,7 @@ const TabNavigation = createBottomTabNavigator(
       }
     },
     Search: {
-      screen: SearchScreen,
+      screen: createStack(SearchScreen, "Search"),
       navigationOptions: {
         tabBarIcon: ({ focused }) => (
           <TabBarIcon
