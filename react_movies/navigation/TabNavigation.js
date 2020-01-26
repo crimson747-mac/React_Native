@@ -2,11 +2,11 @@ import React from "react";
 import { Platform } from "react-native";
 import { createAppContainer } from "react-navigation";
 import { createBottomTabNavigator } from "react-navigation-tabs";
-import MoviesScreen from "../screens/Movies";
-import TVScreen from "../screens/TV";
-import SearchScreen from "../screens/Search";
+import MoviesScreen from "../src/Routes/Movies";
+import TVScreen from "../src/Routes/TV";
+import SearchScreen from "../src/Routes/Search";
 import { BG_COLOR } from "../constants/Colors";
-import TabBarIcon from "../components/TabBarIcon";
+import TabBarIcon from "../src/components/TabBarIcon";
 import { createStack } from "./config";
 
 const TabNavigation = createBottomTabNavigator(
