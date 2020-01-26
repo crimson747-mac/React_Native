@@ -3,7 +3,7 @@ import { AppLoading } from "expo";
 import { StatusBar } from "react-native";
 import * as Font from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
-import MainNavigation from "../../navigation/mainNavigation";
+import MainNavigation from "./navigation/mainNavigation";
 import { render } from "react-dom";
 
 export default class App extends React.Component {

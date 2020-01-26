@@ -4,7 +4,7 @@ import { createAppContainer } from "react-navigation";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import MoviesScreen from "../src/Routes/Movies/MoviesContainer";
 import TVScreen from "../src/Routes/TV";
-import SearchScreen from "../src/Routes/Search";
+import SearchScreen from "../src/Routes/TV";
 import { BG_COLOR } from "../constants/Colors";
 import TabBarIcon from "../src/components/TabBarIcon";
 import { createStack } from "./config";
