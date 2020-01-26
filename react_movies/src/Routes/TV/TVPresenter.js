@@ -4,10 +4,13 @@ import PropTypes from "prop-types";
 import Loader from "../../components/Loader";
 
 //모든 스크린은 네비게이션 props를 가지고 있다.
-const TVPresenter = ({loading}) => loading ? <Loader/> :  <Text>TV</Text>;
+const TVPresenter = ({loading, popular, topRated, airingToday}) => loading ? <Loader/> :  <Text>TV</Text>;
 
 TVPresenter.propTypes = {
-    loading: PropTypes.bool.isRequired
+    loading: PropTypes.bool.isRequired,
+    popular: PropTypes.array,
+    topRated:PropTypes.array,
+    airingToday:PropTypes.array
 };
 
 export default TVPresenter;

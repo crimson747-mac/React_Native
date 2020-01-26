@@ -18,7 +18,8 @@ export default class extends React.Component{
             ({data:{results: upcoming}} = await MoviesApi.upcoming());
             ({data:{results: popular}} = await MoviesApi.popular());
             ({data:{results: nowPlaying}} = await MoviesApi.nowPlaying());
-        } catch {
+        } catch (error){
+            console.log(error);
             error = "Can't get Movies.";
         } finally {
             this.setState({
@@ -34,6 +35,6 @@ export default class extends React.Component{
     render() {
         const {loading, upcoming, popular, nowPlaying} =this.state;
         console.log(this.state);
-        return <MoviesPresenter loading={loading}/>;
+        return <MoviesPresenter loading={loading} upcoming={upcoming} popular={popular} nowPlaying={nowPlaying}/>;
     }
 }
