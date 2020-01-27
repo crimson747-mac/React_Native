@@ -1,27 +1,32 @@
 import React from "react";
-import { Text  } from "react-native";
+import { Text } from "react-native";
 import PropTypes from "prop-types";
 import Loader from "../../components/Loader";
 import styled from "styled-components";
 import MovieSlider from "../../components/MovieSlider";
-import {BG_COLOR} from "../../../constants/Colors";
+import { BG_COLOR } from "../../../constants/Colors";
+import Section from "../../components/Section";
 
 const Container = styled.ScrollView`
-    background-color: ${BG_COLOR};
+  background-color: ${BG_COLOR};
 `;
 
 //모든 스크린은 네비게이션 props를 가지고 있다.
-const MoviesPresenter = ({loading, upcoming, popular, nowPlaying}) => (
-    loading ? <Loader/> :  <Container>
-        <MovieSlider movies={nowPlaying}/>
+const MoviesPresenter = ({ loading, upcoming, popular, nowPlaying }) =>
+  loading ? (
+    <Loader />
+  ) : (
+    <Container>
+      {nowPlaying ? <MovieSlider movies={nowPlaying} /> : null}
+      {upcoming ? <Section movies={upcoming} title="Upcoming Movies" /> : null}
     </Container>
-);
+  );
 
 MoviesPresenter.propTypes = {
-    loading: PropTypes.bool.isRequired,
-    upcoming: PropTypes.array,
-    popular: PropTypes.array,
-    nowPlaying: PropTypes.array,
+  loading: PropTypes.bool.isRequired,
+  upcoming: PropTypes.array,
+  popular: PropTypes.array,
+  nowPlaying: PropTypes.array
 };
 
 export default MoviesPresenter;
